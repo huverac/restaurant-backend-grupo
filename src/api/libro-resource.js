@@ -13,15 +13,16 @@ router.get('/list',async(req,res, next)=>{
         return res.status(500).send('Error de servidor')
     }
 })
+
+
 router.post('/register',async (req,res,next) =>{
-    console.log('HOLAAAAAAAAAAAAAAA')
     try {
         let libros=req.body
         
-        if(await Fachada.registrarpersona(persona)){
+        if(await Fachada.registrarlibros(libros)){
             return res.status(200).send({msg:'Libro registrado correctamente'})
         }else{
-            return res.status(500).send({msg: printString(persona.error,'Error registrando libro')})
+            return res.status(500).send({msg: printString(libros.error,'Error registrando libro')})
         }
     } catch (error) {
         console.log(error)
@@ -29,6 +30,7 @@ router.post('/register',async (req,res,next) =>{
     }
 
 })
+
 router.post('/del', async(req,res,next)=>{
     try {
         let librId=req.body.librId
@@ -48,6 +50,7 @@ router.post('/del', async(req,res,next)=>{
         return res.status(500).send({msg: 'Error del servidor'})
     }
 })
+
 router.put('/modificar', async (req,res, next)=>{
     try {
         let libros=req.body
