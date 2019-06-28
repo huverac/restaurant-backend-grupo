@@ -34,7 +34,7 @@ router.post('/registerpers',async (req,res,next) =>{
         let Personas=req.body
         
         if(await Fachada.registrarpersonacuenta(Personas)){
-            return res.status(200).send({msg:'persona registrada correctamente'})
+            return res.status(200).send({msg:'Persona registrada correctamente'})
         }else{
             return res.status(500).send({msg: printString(Personas.error,'Error registrando Persona')})
         }
