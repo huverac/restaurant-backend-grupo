@@ -1,0 +1,50 @@
+{
+  "name": "ejemplo-backend",
+  "description": "Proyecto base para montar un backend en node js con express, sequelize y postgreSQL",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "babel-node ./src/bin/www.js",
+    "dev:watch": "nodemon",
+    "lint": "eslint ./src --fix",
+    "build": "babel src -d dist",
+    "start": "node ./dist/bin/www.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "http-errors": "~1.6.2",
+    "moment": "^2.24.0",
+    "morgan": "~1.9.0",
+    "pg": "^7.10.0",
+    "pg-hstore": "^2.3.2",
+    "pug": "^2.0.3",
+    "sequelize": "^5.2.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.4"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "./src"
+    ],
+    "exec": "npm run dev"
+  }
+}

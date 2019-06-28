@@ -1,0 +1,1 @@
+Proyecto base para montar un backend en node js con express, sequelize y postgreSQL
