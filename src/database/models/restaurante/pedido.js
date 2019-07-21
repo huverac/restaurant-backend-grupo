@@ -45,6 +45,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    tableName: 'pedido'
+    tableName: 'pedido', schema: 'restaurante'
   });
 };
